@@ -15,6 +15,10 @@ button {
   font-size: 1.2em !important;
 }
 
+.half-width {
+  width: 50%;
+}
+
 /* NAVBAR */
 
 .logo {
@@ -23,8 +27,19 @@ button {
   margin-left: 30px;
 }
 
-/* HOMEPAGE */
+/* DASHBOARD */
 
-.watching-img {
-  width: 50%;
+/* PROFILE */
+
+.profile {
+  width: 60%;
+  padding: 15px;
+}
+
+.profile h3 {
+  font-size: 1.9em;
+}
+
+.avatar {
+  height: 60px;
 }

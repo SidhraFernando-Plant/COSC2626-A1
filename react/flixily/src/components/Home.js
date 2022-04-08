@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <h1>Welcome to Flixily!</h1>
       <div className="d-flex">
-        <img src={watching} className="watching-img me-3"></img>
+        <img src={watching} className="half-width me-3"></img>
         <div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non
