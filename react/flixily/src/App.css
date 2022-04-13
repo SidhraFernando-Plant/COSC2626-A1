@@ -43,3 +43,9 @@ button {
 .avatar {
   height: 60px;
 }
+
+/* REQUESTS */
+.action-btn {
+  width: 40px;
+  height: 40px;
+}

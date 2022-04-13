@@ -8,7 +8,8 @@ export default function Dashboard() {
     <div>
       <div className="d-flex">
         <div className="d-flex flex-column half-width">
-          <Profile />
+          <h2>My Profile</h2>
+          <Profile style="background" />
           <RequestList />
         </div>
         <Friends />
