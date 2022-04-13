@@ -12,7 +12,9 @@ export default function Dashboard() {
           <Profile style="background" />
           <RequestList />
         </div>
-        <Friends />
+        <div className="half-width">
+          <Friends />
+        </div>
       </div>
     </div>
   );
