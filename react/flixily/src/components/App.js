@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import Dashboard from './Dashboard';
 import FriendProfile from './FriendProfile';
+import InspectMovie from './InspectMovie';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<FriendProfile />} />
+            <Route path="/movie" element={<InspectMovie />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </main>
