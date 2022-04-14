@@ -22,6 +22,11 @@ export default function FriendProfile() {
         </div>
         <div className="half-width">
           <h2>New recommendations</h2>
+          <Movie />
+          <Movie />
+          <Movie />
+          <Movie />
+          <Movie />
         </div>
       </div>
     </div>

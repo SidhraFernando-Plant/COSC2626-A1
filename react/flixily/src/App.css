@@ -45,7 +45,15 @@ button {
 }
 
 /* REQUESTS */
+
 .action-btn {
   width: 40px;
   height: 40px;
+}
+
+/* MOVIES */
+
+.movie {
+  width: 90%;
+  margin-bottom: 40px;
 }
