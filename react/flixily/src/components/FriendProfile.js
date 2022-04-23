@@ -1,8 +1,20 @@
 import React from 'react';
 import Profile from './Profile';
 import Movie from './Movie';
+import { useEffect, useState } from 'react';
+import RecommendationService from '../services/RecommendationService';
 
 export default function FriendProfile() {
+  const [recs, setRecs] = useState(null);
+  // useEffect(() => {
+  //   RecommendationService.getRecommendations('sidi', 'alex')
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // }, []);
   return (
     <div>
       <div className="d-flex justify-content-between">

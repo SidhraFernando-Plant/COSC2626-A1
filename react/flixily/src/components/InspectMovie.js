@@ -4,8 +4,23 @@ import tick from '../img/tick.png';
 import cross from '../img/cross.png';
 import star from '../img/star.png';
 import outline from '../img/star-outline.png';
+import RecommendationService from '../services/RecommendationService';
 
 export default function InspectMovie() {
+  function respond(isApproved) {
+    let data = {
+      isApproved: isApproved,
+      id: '87154d55-7885-48a4-838c-7f5ae25921d4',
+    };
+    RecommendationService.updateStatus(data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
     <div>
       <div className="d-flex">
@@ -13,8 +28,16 @@ export default function InspectMovie() {
         <div className="ms-3 movie-intro">
           <div className="d-flex align-items-center">
             <h1>Dance Academy: The Comeback</h1>
-            <img className="action-btn ms-3" src={tick}></img>
-            <img className="action-btn ms-1" src={cross}></img>
+            <img
+              className="action-btn ms-3"
+              src={tick}
+              onClick={() => respond(true)}
+            ></img>
+            <img
+              className="action-btn ms-1"
+              src={cross}
+              onClick={() => respond(false)}
+            ></img>
           </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
