@@ -13,7 +13,7 @@ export default function Profile(props) {
   return (
     <div className={classes}>
       <img src={avatar} className="avatar rounded-circle"></img>
-      <h3 className="ms-3">ilovemovies</h3>
+      <h3 className="ms-3">{props.username}</h3>
       {props.isRequest && (
         <React.Fragment>
           <img className="action-btn ms-3" src={tick}></img>

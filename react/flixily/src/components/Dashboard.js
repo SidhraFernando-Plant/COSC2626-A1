@@ -9,7 +9,7 @@ export default function Dashboard() {
       <div className="d-flex">
         <div className="d-flex flex-column half-width">
           <h2>My Profile</h2>
-          <Profile style="background" />
+          <Profile style="background" username="sidi" />
           <RequestList />
         </div>
         <div className="half-width">
