@@ -6,6 +6,8 @@ import Home from './Home';
 import Dashboard from './Dashboard';
 import FriendProfile from './FriendProfile';
 import InspectMovie from './InspectMovie';
+import DataFetch from './DataFetch';
+import NewRec from './NewRec';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<FriendProfile />} />
             <Route path="/movie" element={<InspectMovie />} />
+            <Route path="/data" element={<DataFetch />} />
+            <Route path="/new-rec" element={<NewRec />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </main>
