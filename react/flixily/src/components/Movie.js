@@ -1,5 +1,6 @@
 import React from 'react';
 import movie from '../img/movie.png';
+import { useEffect } from 'react';
 
 export default function Movie(props) {
   const MAX_STRING_LENGTH = 200;
@@ -9,12 +10,17 @@ export default function Movie(props) {
       : props.description;
 
   return (
-    <div className="d-flex movie">
-      <img src={movie}></img>
-      <div className="ms-3">
-        <h4>{props.title}</h4>
-        <p>{description}</p>
+    <a
+      href={`/movie/${props.recId}`}
+      className="text-reset text-decoration-none"
+    >
+      <div className="d-flex movie">
+        <img src={movie}></img>
+        <div className="ms-3">
+          <h4>{props.title}</h4>
+          <p>{description}</p>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }

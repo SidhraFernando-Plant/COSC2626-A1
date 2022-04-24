@@ -45,6 +45,7 @@ export default function FriendProfile() {
               {matches.map((match) => (
                 <Movie
                   key={match.recommendation_id}
+                  recId={match.recommendation_id}
                   title={match.title}
                   director={match.director}
                   description={match.description}
@@ -67,6 +68,7 @@ export default function FriendProfile() {
               {recs.map((rec) => (
                 <Movie
                   key={rec.recommendation_id}
+                  recId={rec.recommendation_id}
                   title={rec.title}
                   director={rec.director}
                   description={rec.description}

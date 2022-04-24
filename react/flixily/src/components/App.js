@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile/:usernameReq" element={<FriendProfile />} />
-            <Route path="/movie" element={<InspectMovie />} />
+            <Route path="/movie/:id" element={<InspectMovie />} />
             <Route path="/data" element={<DataFetch />} />
             <Route path="/new-rec" element={<NewRec />} />
             <Route path="/" element={<Home />} />

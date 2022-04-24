@@ -10,6 +10,10 @@ const getRecommendations = (userBy, userTo) => {
   return httpCommon.get(`/get-recs?userBy=${userBy}&userTo=${userTo}`);
 };
 
+const getRecommendation = (recId) => {
+  return httpCommon.get(`/get-rec?recId=${recId}`);
+};
+
 const getMatches = (userBy, userTo) => {
   return httpCommon.get(`/get-matches?userBy=${userBy}&userTo=${userTo}`);
 };
@@ -22,5 +26,6 @@ export default {
   createRecommendation,
   updateStatus,
   getRecommendations,
+  getRecommendation,
   getMatches,
 };
