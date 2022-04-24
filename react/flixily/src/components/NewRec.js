@@ -1,24 +1,18 @@
 import React from 'react';
 import RecommendationService from '../services/RecommendationService';
+import { useState } from 'react';
 
 export default function NewRec() {
-  let title = '';
-  let director = '';
-
-  // Make it the fancy set input function?
-  function setTitle(newTitle) {
-    title = newTitle;
-  }
-
-  function setDirector(newDirector) {
-    director = newDirector;
-  }
+  const [title, setTitle] = useState('');
+  const [director, setDirector] = useState('');
+  const [description, setDescription] = useState('');
 
   function addMovie(event) {
     event.preventDefault();
     let movie = {
       title: title,
       director: director,
+      desc: description,
       userBy: 'sidi',
       userTo: 'alex',
     };
@@ -53,6 +47,15 @@ export default function NewRec() {
             className="form-control"
             placeholder="Enter movie director"
             onChange={(event) => setDirector(event.target.value)}
+          ></input>
+        </div>
+        <div class="form-group mb-3">
+          <label for="exampleInputEmail1">Description</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter movie director"
+            onChange={(event) => setDescription(event.target.value)}
           ></input>
         </div>
         <button class="btn btn-dark" onClick={(event) => addMovie(event)}>

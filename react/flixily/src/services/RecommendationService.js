@@ -10,6 +10,10 @@ const getRecommendations = (userBy, userTo) => {
   return httpCommon.get(`/get-recs?userBy=${userBy}&userTo=${userTo}`);
 };
 
+const getMatches = (userBy, userTo) => {
+  return httpCommon.get(`/get-matches?userBy=${userBy}&userTo=${userTo}`);
+};
+
 const updateStatus = (data) => {
   return httpCommon.post('/rec-respond', data);
 };
@@ -18,4 +22,5 @@ export default {
   createRecommendation,
   updateStatus,
   getRecommendations,
+  getMatches,
 };

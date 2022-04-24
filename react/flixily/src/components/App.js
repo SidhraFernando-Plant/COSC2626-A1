@@ -17,7 +17,7 @@ function App() {
         <main role="main" className="body-content">
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/profile" element={<FriendProfile />} />
+            <Route path="/profile/:usernameReq" element={<FriendProfile />} />
             <Route path="/movie" element={<InspectMovie />} />
             <Route path="/data" element={<DataFetch />} />
             <Route path="/new-rec" element={<NewRec />} />
