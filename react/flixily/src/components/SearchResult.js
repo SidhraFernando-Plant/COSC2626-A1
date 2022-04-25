@@ -13,7 +13,11 @@ export default function (props) {
         </p>
       ) : (
         <div className="half-width">
-          <Movie title={props.movie.Title} description={props.movie.Plot} />
+          <Movie
+            title={props.movie.Title}
+            description={props.movie.Plot}
+            imageHref={props.movie.Poster}
+          />
           <button
             className="btn btn-dark"
             onClick={(event) => props.submitMethod(event)}

@@ -17,6 +17,7 @@ export default function InspectMovie() {
         setMovie({
           title: response.data[0].title,
           description: response.data[0].description,
+          imageHref: response.data[0].poster,
         });
         // console.log(movie);
       })
@@ -50,7 +51,11 @@ export default function InspectMovie() {
         <p>Loading</p>
       ) : (
         <div className="d-flex">
-          <img className="big-poster" src={movieImg}></img>
+          {movie.imageHref === null || movie.imageHref === undefined ? (
+            <img className="big-poster" src={movieImg}></img>
+          ) : (
+            <img className="big-poster" src={movie.imageHref}></img>
+          )}
           <div className="ms-3 movie-intro">
             <div className="d-flex align-items-center">
               <h1>{movie.title}</h1>

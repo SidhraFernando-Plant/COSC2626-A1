@@ -17,10 +17,10 @@ export default function NewRec() {
       title: searchResults.Title,
       director: searchResults.Director,
       desc: searchResults.Plot,
+      poster: searchResults.Poster,
       userBy: repository.getUser(),
       userTo: userTo,
     };
-    console.log(movie);
     RecommendationService.createRecommendation(movie)
       .then((response) => {
         alert('Your recommendation was submitted succesfully!');

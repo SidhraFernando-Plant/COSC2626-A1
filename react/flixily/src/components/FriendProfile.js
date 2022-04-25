@@ -55,6 +55,7 @@ export default function FriendProfile() {
                       title={match.title}
                       director={match.director}
                       description={match.description}
+                      imageHref={match.poster}
                     />
                   ))}
                 </Fragment>
@@ -79,6 +80,7 @@ export default function FriendProfile() {
                       title={rec.title}
                       director={rec.director}
                       description={rec.description}
+                      imageHref={rec.poster}
                     />
                   ))}
                 </Fragment>

@@ -15,10 +15,10 @@ export default function Movie(props) {
       className="text-reset text-decoration-none"
     >
       <div className="d-flex movie">
-        {props.imageHref === undefined ? (
-          <img src={movie}></img>
+        {props.imageHref === undefined || props.imageHref === null ? (
+          <img className="movie-poster" src={movie}></img>
         ) : (
-          <img src={props.imageHref}></img>
+          <img className="movie-poster" src={props.imageHref}></img>
         )}
         <div className="ms-3">
           <h4>{props.title}</h4>
