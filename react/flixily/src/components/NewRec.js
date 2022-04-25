@@ -3,19 +3,20 @@ import RecommendationService from '../services/RecommendationService';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import repository from '../data/repository';
+import OMDBService from '../services/OMDBService';
+import SearchResult from './SearchResult';
 
 export default function NewRec() {
   const [title, setTitle] = useState('');
-  const [director, setDirector] = useState('');
-  const [description, setDescription] = useState('');
+  const [searchResults, setSearchResults] = useState(null);
   const { userTo } = useParams();
 
   function addMovie(event) {
     event.preventDefault();
     let movie = {
-      title: title,
-      director: director,
-      desc: description,
+      title: searchResults.Title,
+      director: searchResults.Director,
+      desc: searchResults.Plot,
       userBy: repository.getUser(),
       userTo: userTo,
     };
@@ -30,12 +31,23 @@ export default function NewRec() {
       });
   }
 
+  function searchMovie(event) {
+    event.preventDefault();
+    OMDBService.getMovie(title)
+      .then((response) => {
+        console.log(response);
+        setSearchResults(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
     <div>
       <h1>New recommendation to {userTo}</h1>
-      <form>
+      <form className="d-flex align-items-center mb-4">
         <div class="form-group">
-          <label>Title</label>
           <input
             type="text"
             className="form-control"
@@ -43,28 +55,16 @@ export default function NewRec() {
             onChange={(event) => setTitle(event.target.value)}
           ></input>
         </div>
-        <div class="form-group mb-3">
-          <label>Director</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter movie director"
-            onChange={(event) => setDirector(event.target.value)}
-          ></input>
-        </div>
-        <div class="form-group mb-3">
-          <label>Description</label>
-          <input
-            type="textarea"
-            className="form-control"
-            placeholder="Enter movie director"
-            onChange={(event) => setDescription(event.target.value)}
-          ></input>
-        </div>
-        <button class="btn btn-dark" onClick={(event) => addMovie(event)}>
-          Submit
+        <button
+          class="btn btn-dark ms-2"
+          onClick={(event) => searchMovie(event)}
+        >
+          Search
         </button>
       </form>
+      {searchResults !== null && (
+        <SearchResult movie={searchResults} submitMethod={addMovie} />
+      )}
     </div>
   );
 }

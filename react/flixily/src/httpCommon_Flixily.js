@@ -1,4 +1,4 @@
-// Config for axios requests which is shared across requests
+// Config for axios requests which is shared across requests to Flixily AWS API Gateway
 import axios from 'axios';
 
 export default axios.create({

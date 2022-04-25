@@ -10,9 +10,7 @@
 }
 
 button {
-  height: 50px;
-  width: 130px;
-  font-size: 1.2em !important;
+  /* font-size: 1.2em !important; */
 }
 
 .half-width {

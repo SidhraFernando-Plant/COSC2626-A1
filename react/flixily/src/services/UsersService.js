@@ -1,6 +1,6 @@
 // Service to send API requests for users table
 
-import httpCommon from '../httpCommon';
+import httpCommon from '../httpCommon_Flixily';
 
 const login = (data) => {
   return httpCommon.post('/login', data);

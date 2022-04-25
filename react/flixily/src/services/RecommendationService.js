@@ -1,6 +1,6 @@
 // Service to send API requests for recommendation table
 
-import httpCommon from '../httpCommon';
+import httpCommon from '../httpCommon_Flixily';
 
 const createRecommendation = (data) => {
   return httpCommon.post('/recommend', data);
