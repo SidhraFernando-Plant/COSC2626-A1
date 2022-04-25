@@ -32,7 +32,7 @@ export default function NewRec() {
       <h1>New recommendation</h1>
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Title</label>
+          <label>Title</label>
           <input
             type="text"
             className="form-control"
@@ -41,7 +41,7 @@ export default function NewRec() {
           ></input>
         </div>
         <div class="form-group mb-3">
-          <label for="exampleInputEmail1">Director</label>
+          <label>Director</label>
           <input
             type="text"
             className="form-control"
@@ -50,9 +50,9 @@ export default function NewRec() {
           ></input>
         </div>
         <div class="form-group mb-3">
-          <label for="exampleInputEmail1">Description</label>
+          <label>Description</label>
           <input
-            type="text"
+            type="textarea"
             className="form-control"
             placeholder="Enter movie director"
             onChange={(event) => setDescription(event.target.value)}

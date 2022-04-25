@@ -26,9 +26,11 @@ export default function Home() {
           <button type="button" class="btn btn-dark me-3">
             Sign up
           </button>
-          <button type="button" class="btn btn-outline-dark">
-            Log in
-          </button>
+          <a href="/login">
+            <button type="button" class="btn btn-outline-dark">
+              Log in
+            </button>
+          </a>
         </div>
       </div>
     </div>
