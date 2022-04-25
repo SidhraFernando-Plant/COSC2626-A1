@@ -11,15 +11,20 @@ export default function Profile(props) {
     classes += ' border-bottom border-dark';
   }
   return (
-    <div className={classes}>
-      <img src={avatar} className="avatar rounded-circle"></img>
-      <h3 className="ms-3">{props.username}</h3>
-      {props.isRequest && (
-        <React.Fragment>
-          <img className="action-btn ms-3" src={tick}></img>
-          <img className="action-btn ms-1" src={cross}></img>
-        </React.Fragment>
-      )}
-    </div>
+    <a
+      href={`/profile/${props.username}`}
+      className="text-reset text-decoration-none"
+    >
+      <div className={classes}>
+        <img src={avatar} className="avatar rounded-circle"></img>
+        <h3 className="ms-3">{props.username}</h3>
+        {props.isRequest && (
+          <React.Fragment>
+            <img className="action-btn ms-3" src={tick}></img>
+            <img className="action-btn ms-1" src={cross}></img>
+          </React.Fragment>
+        )}
+      </div>
+    </a>
   );
 }
