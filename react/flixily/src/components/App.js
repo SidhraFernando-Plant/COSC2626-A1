@@ -32,7 +32,7 @@ function App() {
             />
             <Route path="/profile/:usernameReq" element={<FriendProfile />} />
             <Route path="/movie/:id" element={<InspectMovie />} />
-            <Route path="/new-rec" element={<NewRec />} />
+            <Route path="/new-rec/:userTo" element={<NewRec />} />
             <Route path="/login" element={<LogIn updateUser={loginUser} />} />
             <Route path="/" element={<Home />} />
           </Routes>

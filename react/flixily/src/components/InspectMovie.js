@@ -32,8 +32,12 @@ export default function InspectMovie() {
     };
     RecommendationService.updateStatus(data)
       .then((response) => {
-        console.log(response);
-        alert('Success');
+        alert(
+          `You have successfully ${
+            isApproved ? 'approved' : 'rejected'
+          } this recommendation.`
+        );
+        window.location.href = '/dashboard';
       })
       .catch((error) => {
         console.log(error);

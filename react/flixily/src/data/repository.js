@@ -12,8 +12,13 @@ function logOut() {
   localStorage.removeItem(CURRENT_USER_KEY);
 }
 
+function isLoggedIn() {
+  return localStorage.getItem(CURRENT_USER_KEY) !== null;
+}
+
 export default {
   logIn,
   getUser,
   logOut,
+  isLoggedIn,
 };

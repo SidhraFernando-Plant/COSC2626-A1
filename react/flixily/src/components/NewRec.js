@@ -1,11 +1,14 @@
 import React from 'react';
 import RecommendationService from '../services/RecommendationService';
 import { useState } from 'react';
+import { useParams } from 'react-router';
+import repository from '../data/repository';
 
 export default function NewRec() {
   const [title, setTitle] = useState('');
   const [director, setDirector] = useState('');
   const [description, setDescription] = useState('');
+  const { userTo } = useParams();
 
   function addMovie(event) {
     event.preventDefault();
@@ -13,14 +16,14 @@ export default function NewRec() {
       title: title,
       director: director,
       desc: description,
-      userBy: 'sidi',
-      userTo: 'alex',
+      userBy: repository.getUser(),
+      userTo: userTo,
     };
     console.log(movie);
     RecommendationService.createRecommendation(movie)
       .then((response) => {
-        console.log(response);
-        alert('Success!');
+        alert('Your recommendation was submitted succesfully!');
+        window.location.href = '/dashboard';
       })
       .catch((e) => {
         console.log(e);
@@ -29,7 +32,7 @@ export default function NewRec() {
 
   return (
     <div>
-      <h1>New recommendation</h1>
+      <h1>New recommendation to {userTo}</h1>
       <form>
         <div class="form-group">
           <label>Title</label>
