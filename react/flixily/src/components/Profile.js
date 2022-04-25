@@ -16,7 +16,10 @@ export default function Profile(props) {
       className="text-reset text-decoration-none"
     >
       <div className={classes}>
-        <img src={avatar} className="avatar rounded-circle"></img>
+        <img
+          className="avatar rounded-circle"
+          src={`https://ui-avatars.com/api/?name=${props.username}&background=random`}
+        ></img>
         <h3 className="ms-3">{props.username}</h3>
         {props.isRequest && (
           <React.Fragment>

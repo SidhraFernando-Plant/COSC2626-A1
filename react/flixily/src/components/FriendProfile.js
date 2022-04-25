@@ -5,13 +5,23 @@ import { useEffect, useState } from 'react';
 import RecommendationService from '../services/RecommendationService';
 import { useParams } from 'react-router';
 import repository from '../data/repository';
+import AvatarService from '../services/AvatarService';
 
 export default function FriendProfile() {
   const [recs, setRecs] = useState(null);
   const [matches, setMatches] = useState(null);
+  const [avatar, setAvatar] = useState(null);
   const { usernameReq } = useParams();
   const username = repository.getUser();
   useEffect(() => {
+    AvatarService.getAvatar()
+      .then((response) => {
+        console.log(response);
+        setAvatar(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     RecommendationService.getRecommendations(usernameReq, username)
       .then((response) => {
         setRecs(response.data);
