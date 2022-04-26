@@ -1,12 +1,14 @@
 import React from 'react';
-import watching from '../img/watching-together.jpg';
 
 export default function Home() {
   return (
     <div>
       <h1>Welcome to Flixily!</h1>
       <div className="d-flex">
-        <img src={watching} className="half-width me-3"></img>
+        <img
+          src="https://flixily-images.s3.amazonaws.com/watching-together.jpg"
+          className="half-width me-3"
+        ></img>
         <div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non

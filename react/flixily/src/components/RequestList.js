@@ -1,5 +1,4 @@
 import React from 'react';
-import ProfileListItem from './ProfileListItem';
 import Profile from './Profile';
 
 export default function RequestList() {

@@ -17,9 +17,7 @@ function App() {
     setCurrentUser(username);
     console.log(currentUser);
   }
-  // function setCurrentUser(username) {
-  //   alert('setting username: ' + username);
-  // }
+
   return (
     <div className="App">
       <Router>

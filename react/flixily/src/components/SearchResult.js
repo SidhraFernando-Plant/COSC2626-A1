@@ -1,4 +1,3 @@
-import { PresignedPost } from 'aws-sdk/clients/s3';
 import React, { useEffect } from 'react';
 import Movie from './Movie';
 

@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-import movieImg from '../img/movie.png';
-import tick from '../img/tick.png';
-import cross from '../img/cross.png';
-import star from '../img/star.png';
-import outline from '../img/star-outline.png';
 import RecommendationService from '../services/RecommendationService';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
@@ -52,7 +47,10 @@ export default function InspectMovie() {
       ) : (
         <div className="d-flex">
           {movie.imageHref === null || movie.imageHref === undefined ? (
-            <img className="big-poster" src={movieImg}></img>
+            <img
+              className="big-poster"
+              src="https://flixily-images.s3.amazonaws.com/movie.png"
+            ></img>
           ) : (
             <img className="big-poster" src={movie.imageHref}></img>
           )}
@@ -61,23 +59,38 @@ export default function InspectMovie() {
               <h1>{movie.title}</h1>
               <img
                 className="action-btn ms-3"
-                src={tick}
+                src="https://flixily-images.s3.amazonaws.com/tick.png"
                 onClick={() => respond(true)}
               ></img>
               <img
                 className="action-btn ms-1"
-                src={cross}
+                src="https://flixily-images.s3.amazonaws.com/cross.png"
                 onClick={() => respond(false)}
               ></img>
             </div>
             <p>{movie.description}</p>
             <div className="d-flex align-items-center">
               <h3>Rating: </h3>
-              <img className="star ms-2" src={star}></img>
-              <img className="star" src={star}></img>
-              <img className="star" src={star}></img>
-              <img className="star" src={star}></img>
-              <img className="star" src={outline}></img>
+              <img
+                className="star ms-2"
+                src="https://flixily-images.s3.amazonaws.com/star.png"
+              ></img>
+              <img
+                className="star"
+                src="https://flixily-images.s3.amazonaws.com/star.png"
+              ></img>
+              <img
+                className="star"
+                src="https://flixily-images.s3.amazonaws.com/star.png"
+              ></img>
+              <img
+                className="star"
+                src="https://flixily-images.s3.amazonaws.com/star.png"
+              ></img>
+              <img
+                className="star"
+                src="https://flixily-images.s3.amazonaws.com/star-outline.png"
+              ></img>
               <h3 className="ms-4">Starring: </h3>
               <p className="mt-0 mb-0 ms-4 me-4">Xenia Goodwin</p>
               <p className="mt-0 mb-0 ms-4 me-4">Jordan Rodrigues</p>

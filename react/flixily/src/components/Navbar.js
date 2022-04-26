@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from '../img/cinema.png';
-import home from '../img/home.png';
 import repository from '../data/repository';
 
 export default function Navbar() {
@@ -14,13 +12,19 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
         <a className="navbar-brand" href="/">
-          <img src={logo} className="logo"></img>
+          <img
+            src="https://flixily-images.s3.amazonaws.com/cinema.png"
+            className="logo"
+          ></img>
           Flixily
         </a>
         {repository.isLoggedIn() && (
           <div className="d-flex">
             <a href="/dashboard">
-              <img src={home} className="logo"></img>
+              <img
+                src="https://flixily-images.s3.amazonaws.com/home.png"
+                className="logo"
+              ></img>
             </a>
             <button
               className="btn btn-light me-4"

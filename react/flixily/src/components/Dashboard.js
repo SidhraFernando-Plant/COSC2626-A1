@@ -4,7 +4,6 @@ import RequestList from './RequestList';
 import Friends from './Friends';
 import repository from '../data/repository';
 import UsersService from '../services/UsersService';
-import OMDBService from '../services/OMDBService';
 import { useEffect } from 'react';
 
 export default function Dashboard(props) {

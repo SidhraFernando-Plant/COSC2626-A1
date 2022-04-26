@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import UsersService from '../services/UsersService';
-import { useNavigate } from 'react-router-dom';
 import repository from '../data/repository';
 
 export default function LogIn(props) {

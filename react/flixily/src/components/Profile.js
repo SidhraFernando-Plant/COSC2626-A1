@@ -1,7 +1,4 @@
 import React, { Fragment } from 'react';
-import avatar from '../img/avatar.png';
-import tick from '../img/tick.png';
-import cross from '../img/cross.png';
 
 export default function Profile(props) {
   let classes = 'profile d-flex align-items-center mb-4';
@@ -23,8 +20,14 @@ export default function Profile(props) {
         <h3 className="ms-3">{props.username}</h3>
         {props.isRequest && (
           <React.Fragment>
-            <img className="action-btn ms-3" src={tick}></img>
-            <img className="action-btn ms-1" src={cross}></img>
+            <img
+              className="action-btn ms-3"
+              src="https://flixily-images.s3.amazonaws.com/tick.png"
+            ></img>
+            <img
+              className="action-btn ms-1"
+              src={'https://flixily-images.s3.amazonaws.com/cross.png'}
+            ></img>
           </React.Fragment>
         )}
       </div>

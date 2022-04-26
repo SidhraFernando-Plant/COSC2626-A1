@@ -1,6 +1,4 @@
 import React from 'react';
-import movie from '../img/movie.png';
-import { useEffect } from 'react';
 
 export default function Movie(props) {
   const MAX_STRING_LENGTH = 200;
@@ -16,7 +14,10 @@ export default function Movie(props) {
     >
       <div className="d-flex movie">
         {props.imageHref === undefined || props.imageHref === null ? (
-          <img className="movie-poster" src={movie}></img>
+          <img
+            className="movie-poster"
+            src="https://flixily-images.s3.amazonaws.com/movie.png"
+          ></img>
         ) : (
           <img className="movie-poster" src={props.imageHref}></img>
         )}
