@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import RecommendationService from '../services/RecommendationService';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
+import YoutubeService from '../services/YoutubeService';
+import Trailer from './Trailer';
 
 export default function InspectMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [trailerId, setTrailerId] = useState(null);
   useEffect(() => {
     RecommendationService.getRecommendation(id)
       .then((response) => {
@@ -14,7 +17,6 @@ export default function InspectMovie() {
           description: response.data[0].description,
           imageHref: response.data[0].poster,
         });
-        // console.log(movie);
       })
       .catch((e) => {
         console.log(e);
@@ -70,7 +72,8 @@ export default function InspectMovie() {
             </div>
             <p>{movie.description}</p>
             <div className="d-flex align-items-center">
-              <h3>Rating: </h3>
+              <Trailer title={movie.title} />
+              {/* <h3>Rating: </h3>
               <img
                 className="star ms-2"
                 src="https://flixily-images.s3.amazonaws.com/star.png"
@@ -94,7 +97,7 @@ export default function InspectMovie() {
               <h3 className="ms-4">Starring: </h3>
               <p className="mt-0 mb-0 ms-4 me-4">Xenia Goodwin</p>
               <p className="mt-0 mb-0 ms-4 me-4">Jordan Rodrigues</p>
-              <p className="mt-0 mb-0 ms-4 me-4">Alicia Banit</p>
+              <p className="mt-0 mb-0 ms-4 me-4">Alicia Banit</p> */}
             </div>
           </div>
         </div>
