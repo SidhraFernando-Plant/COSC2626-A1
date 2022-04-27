@@ -9,6 +9,7 @@ import InspectMovie from './InspectMovie';
 import NewRec from './NewRec';
 import LogIn from './LogIn';
 import { useState } from 'react';
+import Footer from './Footer';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -36,6 +37,7 @@ function App() {
           </Routes>
         </main>
       </Router>
+      <Footer />
     </div>
   );
 }

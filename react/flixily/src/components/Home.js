@@ -4,32 +4,17 @@ export default function Home() {
   return (
     <div>
       <h1>Welcome to Flixily!</h1>
-      <div className="d-flex">
+      <div className="d-flex bg-dark align-items-center rounded">
         <img
           src="https://flixily-images.s3.amazonaws.com/watching-together.jpg"
-          className="half-width me-3"
+          className="half-width"
         ></img>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non
-            pharetra urna, et semper justo. Nunc id pulvinar arcu, sed auctor
-            nunc. In hac habitasse platea dictumst. Proin eros sem, finibus
-            vitae lorem sit amet, elementum scelerisque leo. Donec rhoncus
-            sapien sit amet nisl varius mollis. Integer lacinia, lectus sed
-            porta convallis, odio nisi fermentum lorem, efficitur luctus turpis
-            ligula ac arcu. Ut libero leo, tempus non erat nec, consectetur
-            cursus ligula. Curabitur a elementum felis, non tincidunt nibh. Ut
-            neque mi, efficitur quis venenatis vitae, aliquet sed urna. Donec
-            lacus est, ultrices et cursus sit amet, condimentum id metus. Donec
-            tristique eu magna at malesuada. Aliquam erat volutpat. Fusce vel
-            lacinia elit.
+        <div className="m-auto">
+          <p className="text-light">
+            Streamlining the process of choosing what to watch.
           </p>
-
-          <button type="button" class="btn btn-dark me-3">
-            Sign up
-          </button>
-          <a href="/login">
-            <button type="button" class="btn btn-outline-dark">
+          <a href="/login" className="m-auto">
+            <button type="button" class="btn btn-outline-light">
               Log in
             </button>
           </a>
