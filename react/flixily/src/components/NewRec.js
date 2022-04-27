@@ -22,6 +22,7 @@ export default function NewRec() {
       userBy: repository.getUser(),
       userTo: userTo,
     };
+    // Submit the new recommendation to the db
     RecommendationService.createRecommendation(movie)
       .then((response) => {
         alert('Your recommendation was submitted succesfully!');

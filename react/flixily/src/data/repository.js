@@ -1,3 +1,5 @@
+// Functions to get/update info about the current user stored in localStorage
+
 const CURRENT_USER_KEY = 'currentUser';
 
 function logIn(username) {

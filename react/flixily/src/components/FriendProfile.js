@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import RecommendationService from '../services/RecommendationService';
 import { useParams } from 'react-router';
 import repository from '../data/repository';
-import AvatarService from '../services/AvatarService';
 import { errorResponse } from '../util/ErrorResponse';
 
 export default function FriendProfile() {
@@ -14,6 +13,7 @@ export default function FriendProfile() {
   const { usernameReq } = useParams();
   const username = repository.getUser();
   useEffect(() => {
+    // Get the recommendations and matches the current user shares with the user being viewed
     RecommendationService.getRecommendations(usernameReq, username)
       .then((response) => {
         setRecs(response.data);

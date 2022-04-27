@@ -13,6 +13,7 @@ export default function LogIn(props) {
       username: username,
       password: password,
     };
+    // Submit input details to users API to verify
     UsersService.login(reqBody)
       .then(() => {
         repository.logIn(username);

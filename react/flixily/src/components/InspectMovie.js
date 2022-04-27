@@ -10,6 +10,7 @@ export default function InspectMovie(props) {
   const { isApproved } = useParams();
   const [movie, setMovie] = useState(null);
   useEffect(() => {
+    // Fetch data regarding the movie being viewed from db
     RecommendationService.getRecommendation(id)
       .then((response) => {
         setMovie({
@@ -24,6 +25,7 @@ export default function InspectMovie(props) {
   }, []);
 
   function respond(isApproved) {
+    // Aprove/reject the recommendation by updating its status in db
     let data = {
       isApproved: isApproved,
       id: id,
@@ -77,31 +79,6 @@ export default function InspectMovie(props) {
             <p>{movie.description}</p>
             <div className="d-flex align-items-center">
               <Trailer title={movie.title} />
-              {/* <h3>Rating: </h3>
-              <img
-                className="star ms-2"
-                src="https://flixily-images.s3.amazonaws.com/star.png"
-              ></img>
-              <img
-                className="star"
-                src="https://flixily-images.s3.amazonaws.com/star.png"
-              ></img>
-              <img
-                className="star"
-                src="https://flixily-images.s3.amazonaws.com/star.png"
-              ></img>
-              <img
-                className="star"
-                src="https://flixily-images.s3.amazonaws.com/star.png"
-              ></img>
-              <img
-                className="star"
-                src="https://flixily-images.s3.amazonaws.com/star-outline.png"
-              ></img>
-              <h3 className="ms-4">Starring: </h3>
-              <p className="mt-0 mb-0 ms-4 me-4">Xenia Goodwin</p>
-              <p className="mt-0 mb-0 ms-4 me-4">Jordan Rodrigues</p>
-              <p className="mt-0 mb-0 ms-4 me-4">Alicia Banit</p> */}
             </div>
           </div>
         </div>

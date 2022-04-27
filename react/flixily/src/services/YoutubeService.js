@@ -2,6 +2,7 @@
 
 import httpCommon from '../httpCommon_youtube';
 
+// Return the most relevant result for a search for the movie title + trailer
 const getTrailer = (title) => {
   return httpCommon.get('', {
     params: {

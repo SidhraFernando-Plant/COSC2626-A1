@@ -3,6 +3,7 @@ import repository from '../data/repository';
 
 export default function Navbar() {
   function signOut(event) {
+    // Remove user info from localStorage
     event.preventDefault();
     repository.logOut();
     window.location.href = '/';

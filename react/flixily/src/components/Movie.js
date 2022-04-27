@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function Movie(props) {
   const MAX_STRING_LENGTH = 200;
+  // Cut down description as this is just a preview of the movie
   var description =
     props.description.length > MAX_STRING_LENGTH
       ? props.description.substring(0, MAX_STRING_LENGTH - 3) + '...'

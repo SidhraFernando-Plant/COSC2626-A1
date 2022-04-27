@@ -2,6 +2,7 @@
 
 import httpCommon from '../httpCommon_Flixily';
 
+// Verify credentials
 const login = (data) => {
   return httpCommon.post('/login', data);
 };

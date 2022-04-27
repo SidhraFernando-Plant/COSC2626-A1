@@ -6,6 +6,7 @@ const createRecommendation = (data) => {
   return httpCommon.post('/recommend', data);
 };
 
+// Get recommendations recommended by userBy to userTo
 const getRecommendations = (userBy, userTo) => {
   return httpCommon.get(`/get-recs?userBy=${userBy}&userTo=${userTo}`);
 };

@@ -11,10 +11,12 @@ export default function Dashboard(props) {
   const [username, setUsername] = useState(repository.getUser());
   const [friends, setFriends] = useState(null);
   useEffect(() => {
+    // Restrict access if not logged in
     if (username === null) {
       alert("Sorry, you can't access this page!");
       window.location.href = '/';
     } else {
+      // Load user's friend list
       UsersService.getFriends(username)
         .then((response) => {
           console.log(response.data);

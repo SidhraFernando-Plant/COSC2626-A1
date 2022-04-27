@@ -4,6 +4,7 @@ import YoutubeService from '../services/YoutubeService';
 export default function (props) {
   const [trailerId, setTrailerId] = useState(null);
   useEffect(() => {
+    // Submit movie name to api to get video id of the trailer
     YoutubeService.getTrailer(props.title)
       .then((response) => {
         console.log(response.data.items[0].id.videoId);
