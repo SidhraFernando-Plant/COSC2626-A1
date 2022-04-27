@@ -25,21 +25,45 @@ button {
   margin-left: 30px;
 }
 
-/* DASHBOARD */
+/* LOGIN */
+
+.login-form {
+  background-color: #ff5491;
+  width: 30%;
+  margin: auto;
+}
 
 /* PROFILE */
 
 .profile {
   width: 60%;
-  padding: 15px;
 }
 
 .profile h3 {
   font-size: 1.9em;
+  font-weight: 800;
 }
 
 .avatar {
+  height: 120px;
+  margin-bottom: 5px;
+}
+
+.avatar-small {
   height: 60px;
+}
+
+.friends {
+  font-style: italic;
+}
+
+.rec-btn {
+  background-color: #ff5491;
+  color: #212529;
+  font-weight: 700;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* REQUESTS */

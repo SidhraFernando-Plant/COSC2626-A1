@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import RecommendationService from '../services/RecommendationService';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import YoutubeService from '../services/YoutubeService';
 import Trailer from './Trailer';
+import { PresignedPost } from 'aws-sdk/clients/s3';
 
-export default function InspectMovie() {
+export default function InspectMovie(props) {
   const { id } = useParams();
+  const { isApproved } = useParams();
   const [movie, setMovie] = useState(null);
-  const [trailerId, setTrailerId] = useState(null);
   useEffect(() => {
     RecommendationService.getRecommendation(id)
       .then((response) => {
@@ -59,16 +60,20 @@ export default function InspectMovie() {
           <div className="ms-3 movie-intro">
             <div className="d-flex align-items-center">
               <h1>{movie.title}</h1>
-              <img
-                className="action-btn ms-3"
-                src="https://flixily-images.s3.amazonaws.com/tick.png"
-                onClick={() => respond(true)}
-              ></img>
-              <img
-                className="action-btn ms-1"
-                src="https://flixily-images.s3.amazonaws.com/cross.png"
-                onClick={() => respond(false)}
-              ></img>
+              {isApproved !== 'true' && (
+                <Fragment>
+                  <img
+                    className="action-btn ms-3"
+                    src="https://flixily-images.s3.amazonaws.com/tick.png"
+                    onClick={() => respond(true)}
+                  ></img>
+                  <img
+                    className="action-btn ms-1"
+                    src="https://flixily-images.s3.amazonaws.com/cross.png"
+                    onClick={() => respond(false)}
+                  ></img>
+                </Fragment>
+              )}
             </div>
             <p>{movie.description}</p>
             <div className="d-flex align-items-center">

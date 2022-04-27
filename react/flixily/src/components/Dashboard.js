@@ -26,23 +26,19 @@ export default function Dashboard(props) {
     }
   }, []);
   return (
-    <div>
-      {username === null ? (
-        <p>Loading</p>
+    <div className="m-auto dashboard profile">
+      {username === null || friends === null ? (
+        <p>Loading...</p>
       ) : (
-        <div className="d-flex">
-          <div className="d-flex flex-column half-width">
-            <h2>My Profile</h2>
-            <Profile style="background" username={username} />
-            <RequestList />
-          </div>
-          <div className="half-width">
-            {friends === null ? (
-              <p>Loading...</p>
-            ) : (
-              <Friends friendsList={friends} />
-            )}
-          </div>
+        <div className="d-flex flex-column">
+          <h2>My Profile</h2>
+          <Profile
+            style="background"
+            username={username}
+            myProfile={true}
+            friends={friends.length}
+          />
+          <Friends friendsList={friends} />
         </div>
       )}
     </div>

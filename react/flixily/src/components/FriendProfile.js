@@ -42,8 +42,8 @@ export default function FriendProfile() {
       <div className="d-flex justify-content-between">
         <Profile username={usernameReq} />
         <a href={`/new-rec/${usernameReq}`}>
-          <button type="button" class="btn btn-dark">
-            Recommend
+          <button type="button" class="btn btn-dark rec-btn">
+            + Recommend
           </button>
         </a>
       </div>
@@ -59,14 +59,18 @@ export default function FriendProfile() {
               ) : (
                 <Fragment>
                   {matches.map((match) => (
-                    <Movie
-                      key={match.recommendation_id}
-                      recId={match.recommendation_id}
-                      title={match.title}
-                      director={match.director}
-                      description={match.description}
-                      imageHref={match.poster}
-                    />
+                    <a
+                      href={`/movie/${match.recommendation_id}/true`}
+                      className="text-reset text-decoration-none"
+                    >
+                      <Movie
+                        key={match.recommendation_id}
+                        title={match.title}
+                        director={match.director}
+                        description={match.description}
+                        imageHref={match.poster}
+                      />
+                    </a>
                   ))}
                 </Fragment>
               )}
@@ -84,14 +88,18 @@ export default function FriendProfile() {
               ) : (
                 <Fragment>
                   {recs.map((rec) => (
-                    <Movie
-                      key={rec.recommendation_id}
-                      recId={rec.recommendation_id}
-                      title={rec.title}
-                      director={rec.director}
-                      description={rec.description}
-                      imageHref={rec.poster}
-                    />
+                    <a
+                      href={`/movie/${rec.recommendation_id}/false`}
+                      className="text-reset text-decoration-none"
+                    >
+                      <Movie
+                        key={rec.recommendation_id}
+                        title={rec.title}
+                        director={rec.director}
+                        description={rec.description}
+                        imageHref={rec.poster}
+                      />
+                    </a>
                   ))}
                 </Fragment>
               )}
