@@ -27,6 +27,10 @@ button {
 
 /* LOGIN */
 
+.error-msg {
+  width: 30%;
+}
+
 .login-form {
   background-color: #ff5491;
   width: 30%;

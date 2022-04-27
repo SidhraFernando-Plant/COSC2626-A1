@@ -14,8 +14,8 @@ const getRecommendation = (recId) => {
   return httpCommon.get(`/get-rec?recId=${recId}`);
 };
 
-const getMatches = (userBy, userTo) => {
-  return httpCommon.get(`/get-matches?userBy=${userBy}&userTo=${userTo}`);
+const getMatches = (user1, user2) => {
+  return httpCommon.get(`/get-matches?user1=${user1}&user2=${user2}`);
 };
 
 const updateStatus = (data) => {

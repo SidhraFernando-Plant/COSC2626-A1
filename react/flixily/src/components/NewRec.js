@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import repository from '../data/repository';
 import OMDBService from '../services/OMDBService';
 import SearchResult from './SearchResult';
+import { errorResponse } from '../util/ErrorResponse';
 
 export default function NewRec() {
   const [title, setTitle] = useState('');
@@ -26,8 +27,8 @@ export default function NewRec() {
         alert('Your recommendation was submitted succesfully!');
         window.location.href = '/dashboard';
       })
-      .catch((e) => {
-        console.log(e);
+      .catch(() => {
+        errorResponse();
       });
   }
 
@@ -38,8 +39,8 @@ export default function NewRec() {
         console.log(response);
         setSearchResults(response.data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        errorResponse();
       });
   }
 

@@ -5,6 +5,7 @@ import repository from '../data/repository';
 export default function LogIn(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
 
   function login(event) {
     event.preventDefault();
@@ -19,12 +20,17 @@ export default function LogIn(props) {
         return;
       })
       .catch((error) => {
-        console.log(error);
+        setError('Invalid login, please try again.');
       });
   }
   return (
     <div>
       <h1 className="text-center">Login</h1>
+      {error !== null && (
+        <div class="alert alert-danger error-msg m-auto mb-2 p-2" role="alert">
+          {error}
+        </div>
+      )}
       <div className="login-form p-4 rounded text-light">
         <div class="form-group">
           <label>Username</label>

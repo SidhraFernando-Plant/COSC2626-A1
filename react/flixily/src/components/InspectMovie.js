@@ -2,9 +2,8 @@ import React, { Fragment, useState } from 'react';
 import RecommendationService from '../services/RecommendationService';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
-import YoutubeService from '../services/YoutubeService';
 import Trailer from './Trailer';
-import { PresignedPost } from 'aws-sdk/clients/s3';
+import { errorResponse } from '../util/ErrorResponse';
 
 export default function InspectMovie(props) {
   const { id } = useParams();
@@ -19,8 +18,8 @@ export default function InspectMovie(props) {
           imageHref: response.data[0].poster,
         });
       })
-      .catch((e) => {
-        console.log(e);
+      .catch(() => {
+        errorResponse();
       });
   }, []);
 

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Profile from './Profile';
-import RequestList from './RequestList';
 import Friends from './Friends';
 import repository from '../data/repository';
 import UsersService from '../services/UsersService';
 import YoutubeService from '../services/YoutubeService';
 import { useEffect } from 'react';
+import { errorResponse } from '../util/ErrorResponse';
 
 export default function Dashboard(props) {
   const [username, setUsername] = useState(repository.getUser());
@@ -20,8 +20,8 @@ export default function Dashboard(props) {
           console.log(response.data);
           setFriends(response.data);
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
+          errorResponse();
         });
     }
   }, []);

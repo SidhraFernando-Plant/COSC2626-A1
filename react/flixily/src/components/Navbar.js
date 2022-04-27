@@ -2,7 +2,6 @@ import React from 'react';
 import repository from '../data/repository';
 
 export default function Navbar() {
-  console.log(repository.isLoggedIn());
   function signOut(event) {
     event.preventDefault();
     repository.logOut();
